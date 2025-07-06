@@ -28,7 +28,8 @@ Développé dans le cadre d'une formation en développement web, ce projet démo
 
 ### 🎮 Démo en ligne
 
-[Jouer maintenant]([(https://retrogreg.github.io/mystery-number/))]
+[Jouer maintenant](https://retrogreg.github.io/mystery-number/)
+
 ## ✨ Fonctionnalités
 
 ### 🎲 Fonctionnalités principales
