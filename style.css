@@ -1,0 +1,250 @@
+/* Glitch effect for the title */
+@keyframes glitch {
+  0% {
+    transform: skew(0.3deg);
+    text-shadow: -2px 0 red, 2px 0 cyan;
+  }
+  10% {
+    transform: skew(0.3deg);
+    text-shadow: -2px 0 cyan, 2px 0 red;
+  }
+  20%,
+  80% {
+    transform: skew(0deg);
+    text-shadow: none;
+  }
+  90% {
+    transform: skew(0.3deg);
+    text-shadow: -2px 0 red, 2px 0 cyan;
+  }
+}
+
+h1 {
+  background: linear-gradient(90deg, #ff6b81, #6c5ce7);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: glitch 1s infinite, gradientMove 3s infinite;
+  text-align: center; /* Centre le titre */
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+/* Background "Matrix" effect */
+body {
+  background: black;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  font-family: "Poppins", sans-serif;
+  color: #ffffff93;
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #f0f0f0;
+  color: #2c3e50;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+p,
+span,
+input,
+select {
+  color: inherit;
+}
+
+button:hover {
+  background-color: #5a9;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: #5a9;
+  border-color: #5a9;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #4f8;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.result {
+  animation: fadeIn 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+
+.result.text-success {
+  color: #6c5ce7;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.result.text-danger {
+  color: #ff7675;
+  font-weight: bold;
+  animation: shake 0.5s ease-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#resetBtn {
+  display: none;
+  margin-top: 20px;
+}
+
+#resetBtn.show {
+  display: inline-block;
+}
+
+/* Matrix stream effect */
+.matrix-stream {
+  position: absolute;
+  font-family: monospace;
+  color: lime;
+  font-size: 1.5rem;
+  animation: matrix 10s linear infinite;
+  white-space: nowrap; /* Empêche le retour à la ligne */
+  z-index: -1; /* Les chiffres Matrix passent derrière le contenu */
+}
+
+@keyframes matrix {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(2000%);
+    opacity: 1;
+  }
+}
+
+/* Ajout du message caché */
+#hiddenMessage {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: monospace;
+  color: lime;
+  font-size: 1.2rem;
+  display: none;
+}
+
+@keyframes hiddenMessageEffect {
+  0%,
+  95% {
+    opacity: 0;
+  }
+  96%,
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Explosion d'émojis */
+#emojiExplosion {
+  pointer-events: none;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.emoji {
+  position: absolute;
+  animation: explode 1s forwards;
+  font-size: 2rem;
+}
+
+/* Styles pour le mini-jeu Snake */
+#snakeGame {
+  text-align: center;
+  color: #fff;
+}
+
+#snakeCanvas {
+  background-color: #000;
+}
+
+/* Bouton avec effet */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  transform: scale(0);
+  transition: transform 0.5s ease;
+  border-radius: 50%;
+}
+
+button:hover::before {
+  transform: scale(1);
+}
