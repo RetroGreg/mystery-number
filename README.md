@@ -28,8 +28,7 @@ Développé dans le cadre d'une formation en développement web, ce projet démo
 
 ### 🎮 Démo en ligne
 
-[Jouer maintenant](https://votre-username.github.io/nombre-mystere/) *(Remplacez par votre lien)*
-
+[Jouer maintenant]([(https://retrogreg.github.io/mystery-number/))]
 ## ✨ Fonctionnalités
 
 ### 🎲 Fonctionnalités principales
@@ -126,8 +125,7 @@ nombre-mystere/
 3. **Lancement**
 
 - Ouvrez simplement `index.html` dans votre navigateur
-- Ou utilisez un serveur local : `python -m http.server 8000`
-
+  
 ## 🎮 Comment jouer
 
 ### Jeu principal
@@ -163,7 +161,7 @@ startSnakeGame()        // Lance le mini-jeu caché
 
 - **Innovation** : Transformation d'un exercice classique en expérience immersive
 - **Créativité** : Univers cyberpunk cohérent avec effets Matrix
-- **Technique** : Maîtrise avancée de JavaScript et des animations CSS
+- **Technique** : Fonctions avancées de JavaScript et des animations CSS
 - **Surprise** : Easter eggs qui enrichissent l'expérience
 - **Polish** : Attention aux détails (sons, animations, messages)
 
